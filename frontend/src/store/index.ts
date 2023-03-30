@@ -17,15 +17,16 @@ export default createStore({
     },
     async createTask({ dispatch }, task) {
       await api.createTask(task);
-      dispatch('fetchTasks');
+      dispatch("fetchTasks");
     },
     async updateTask({ dispatch }, { taskId, updatedTask }) {
       await api.updateTask(taskId, updatedTask);
-      dispatch('fetchTasks');
+      dispatch("fetchTasks");
     },
     async deleteTask({ dispatch }, taskId) {
       await api.deleteTask(taskId);
-      dispatch('fetchTasks');
+      dispatch("fetchTasks");
+    },
   },
   modules: {},
 });

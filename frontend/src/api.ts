@@ -12,4 +12,16 @@ export default {
   getTasks() {
     return apiClient.get("/tasks");
   },
+  createTask(task: { title: string }) {
+    return apiClient.post("/tasks", task);
+  },
+  updateTask(
+    taskId: string,
+    updatedTask: { title: string; completed: boolean }
+  ) {
+    return apiClient.put(`/tasks/${taskId}`, updatedTask);
+  },
+  deleteTask(taskId: string) {
+    return apiClient.delete(`/tasks/${taskId}`);
+  },
 };
